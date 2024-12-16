@@ -48,31 +48,29 @@ class CustomProductWidget extends StatelessWidget {
               ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Flexible(
                   child: Text(
-                    weight,
+                    "Rs. $weight",
                     overflow: TextOverflow.ellipsis,
                     style: poppinsRegular.copyWith(
                       fontSize: Dimensions.fontSize12,
                       color: Theme.of(context).hintColor,
+                      decoration: TextDecoration.lineThrough,
                     ),
                   ),
                 ),
-                Flexible(
-                  child: Text(
-                    price,
-                    overflow: TextOverflow.ellipsis,
-                    style: poppinsBold.copyWith(
-                      fontSize: Dimensions.fontSize18,
-                      color: Theme.of(context).primaryColor,
-                    ),
+                Text(
+                  price,
+                  overflow: TextOverflow.ellipsis,
+                  style: poppinsBold.copyWith(
+                    fontSize: Dimensions.fontSize12,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ],
             ),
-            sizedBox10(),
+        Spacer(),
             CustomButtonWidget(
               height: 30,
               isBold: false,

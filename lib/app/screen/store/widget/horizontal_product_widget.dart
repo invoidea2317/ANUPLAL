@@ -86,7 +86,7 @@ class HorizontalProductWidget extends StatelessWidget {
               child: const Center(child: Text("No products available")))
               :
           SizedBox(
-            height: 240, // Adjust the height to fit your items.
+            height: 245, // Adjust the height to fit your items.
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: imgList.length,
@@ -172,7 +172,7 @@ class HorizontalProductWidget extends StatelessWidget {
                           //     ),
                           //   ],
                           // ),
-                          // sizedBox10(),
+                         Spacer(),
                           CustomButtonWidget(
                             height: 30,
                             isBold: false,

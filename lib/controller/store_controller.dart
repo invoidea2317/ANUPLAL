@@ -1,5 +1,6 @@
 
 import 'package:anuplal/controller/home_screen_controller.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../app/models/categories_model.dart';
@@ -35,6 +36,7 @@ class StoreController extends GetxController implements GetxService {
   }
 
   Future<bool> fetchNearestCategories({required String lat, required String long}) async {
+    debugPrint("fetchNearestCategories : $lat, $long");
     final bool result = await apiService.fetchNearestStore(latitude: lat, longitude: long, homeScreenController: this);
     return result;
   }

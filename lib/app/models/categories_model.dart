@@ -2,15 +2,15 @@ import 'community_model.dart';
 
 class NearestShop {
   final int id;
-  final String name;
+  final String? name;
 
-  final String address;
-  final String latitude;
-  final String longitude;
-  final String openingTime;
-  final String closingTime;
-  final String description;
-  final List<Category> categories;
+  final String? address;
+  final String? latitude;
+  final String? longitude;
+  final String? openingTime;
+  final String? closingTime;
+  final String? description;
+  final List<Category>? categories;
   final Media? mediaLogo;
 
   NearestShop({

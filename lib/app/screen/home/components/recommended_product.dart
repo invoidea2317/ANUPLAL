@@ -90,26 +90,27 @@ class RecommendedProduct extends StatelessWidget {
                         ),
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Flexible(
                             child: Text(
                               '₹ ${product.price}',
                               overflow: TextOverflow.ellipsis,
+
                               style: poppinsRegular.copyWith(
                                 fontSize: Dimensions.fontSize12,
                                 color: Theme.of(context).hintColor,
+                                decoration: TextDecoration.lineThrough,
                               ),
+
                             ),
                           ),
-                          Flexible(
-                            child: Text(
-                              '₹ ${product.discountPrice}',
-                              overflow: TextOverflow.ellipsis,
-                              style: poppinsBold.copyWith(
-                                fontSize: Dimensions.fontSize18,
-                                color: Theme.of(context).primaryColor,
-                              ),
+                          SizedBox(width: 5),
+                          Text(
+                            '₹ ${product.discountPrice}',
+                            overflow: TextOverflow.ellipsis,
+                            style: poppinsBold.copyWith(
+                              fontSize:Dimensions.fontSize12,
+                              color: Theme.of(context).primaryColor,
                             ),
                           ),
                         ],

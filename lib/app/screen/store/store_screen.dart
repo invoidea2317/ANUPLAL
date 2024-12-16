@@ -106,32 +106,32 @@ class _StoreScreenState extends State<StoreScreen> {
               children: [
                 sizedBoxDefault(),
                 for (int i = 0;
-                    i < storeController.nearestShop[0].categories.length;
+                    i < storeController.nearestShop[0].categories!.length;
                     i++)
                   GetBuilder<HomeScreenController>(
                     builder: (homeScreenController) => HorizontalProductWidget(
                       products: storeController
-                          .nearestShop[0].categories[i].products,
+                          .nearestShop[0].categories![i].products,
                       homescreencontroller: homeScreenController,
                       index: i,
                       sectionTitle:
-                          storeController.nearestShop[0].categories[i].name,
+                          storeController.nearestShop[0].categories![i].name,
                       imgList: storeController
-                          .nearestShop[0].categories[i].products
+                          .nearestShop[0].categories![i].products
                           .map((e) => e.media!.src)
                           .toList(),
                       titleList: storeController
-                          .nearestShop[0].categories[i].products
+                          .nearestShop[0].categories![i].products
                           .map((e) => e.name)
                           .toList(),
                       weightList: [],
                       priceList: storeController
-                          .nearestShop[0].categories[i].products
+                          .nearestShop[0].categories![i].products
                           .map((e) => e.price.toString())
                           .toList(),
                       productTap: (index) {
                         homeScreenController.fetchParticularDetails(homeScreenController, storeController
-                            .nearestShop[0].categories[i].products[index??0].id.toString());
+                            .nearestShop[0].categories![i].products[index??0].id.toString());
                         Get.toNamed(RouteHelper.getProductDetailRoute());
                       },
                       isNetworkImage: true,
@@ -149,7 +149,7 @@ class _StoreScreenState extends State<StoreScreen> {
                       },
                     ),
                   ),
-                sizedBox100()
+                // sizedBox100()
               ],
             ),
           ),

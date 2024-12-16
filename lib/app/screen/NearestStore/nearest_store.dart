@@ -129,7 +129,7 @@ class _NearestStoreState extends State<NearestStore> {
                          child: SizedBox(
                            width: double.infinity,
                            child: Text(
-                             storeController.nearestShop[0].name,
+                             storeController.nearestShop[0].name ?? "",
                              style: TextStyle(
                                color: Colors.black,
                                fontSize: 12,
@@ -146,7 +146,7 @@ class _NearestStoreState extends State<NearestStore> {
                          child: SizedBox(
                            width: double.infinity,
                            child: Text(
-                             storeController.nearestShop[0].description,
+                             storeController.nearestShop[0].description ?? "",
                              style: TextStyle(
                                color: Colors.black.withOpacity(0.5),
                                fontSize: 12,
@@ -265,21 +265,21 @@ class _NearestStoreState extends State<NearestStore> {
                   ),
                 ),
                 sizedBoxDefault(),
-                for (int i = 0; i < storeController.nearestShop[0].categories.length; i++)
+                for (int i = 0; i < storeController.nearestShop[0].categories!.length; i++)
                   GetBuilder<HomeScreenController>(
                     builder: (homeScreenController) => HorizontalProductWidget(
                       homescreencontroller: homeScreenController,
                       products: storeController
-                          .nearestShop[0].categories[i].products,
+                          .nearestShop[0].categories![i].products,
                       index: i,
-                      sectionTitle: storeController.nearestShop[0].categories[i].name,
-                      imgList: storeController.nearestShop[0].categories[i].products.map((e) => e.media!.src).toList(),
-                      titleList: storeController.nearestShop[0].categories[i].products.map((e) => e.name).toList(),
+                      sectionTitle: storeController.nearestShop[0].categories![i].name,
+                      imgList: storeController.nearestShop[0].categories![i].products.map((e) => e.media!.src).toList(),
+                      titleList: storeController.nearestShop[0].categories![i].products.map((e) => e.name).toList(),
                       weightList: [],
-                      priceList: storeController.nearestShop[0].categories[i].products.map((e) => e.price.toString()).toList(),
+                      priceList: storeController.nearestShop[0].categories![i].products.map((e) => e.price.toString()).toList(),
                       productTap: (index) {
                         homeScreenController.fetchParticularDetails(homeScreenController, storeController
-                            .nearestShop[0].categories[i].products[index??0].id.toString());
+                            .nearestShop[0].categories![i].products[index??0].id.toString());
                         Get.toNamed(RouteHelper.getProductDetailRoute());
                         Get.toNamed(RouteHelper.getProductDetailRoute());
                       },
