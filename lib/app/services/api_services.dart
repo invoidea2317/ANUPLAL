@@ -648,7 +648,7 @@ class ApiService {
       debugPrint("CommentOnApi $data");
       if (data['message'].toString().trim() == "Order created successfully") {
         if(paymentMethod){
-          debugPrint("CommentOnApi $data");
+          // debugPrint("CommentOnApi $data");
           razorpayImplement(data['data']["order"]['order_code'],  totalAmountValue, 'INR', "rzp_test_ttuVlnJolWhSyR");
           return data['data'];
         }

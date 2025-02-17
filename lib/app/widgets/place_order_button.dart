@@ -82,6 +82,7 @@ class PlaceOrderButton extends StatelessWidget {
               ApiService().bookOrder(shopModel: shopModel, paymentMethod: isOnlinePaymentSelected,totalAmountValue:totalAmountValue).then((value){
                 Get.snackbar("Order Placed", "Your order has been placed successfully");
                 ApiService().FetchcartListing(homeScreenController);
+                Get.back();
               });
         }),
         SizedBox(
