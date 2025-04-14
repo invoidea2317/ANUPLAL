@@ -55,6 +55,8 @@ class _StoreScreenState extends State<StoreScreen> {
         desiredAccuracy: LocationAccuracy.high);
     storeController.fetchNearestCategories(
         lat: position.latitude.toString(), long: position.longitude.toString());
+    storeController. changeLatAndLong(
+        position.latitude.toString(), position.longitude.toString());
   }
 
   @override

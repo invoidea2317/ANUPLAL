@@ -257,7 +257,7 @@ class ApiService {
       HomeScreenController homeScreenController, String id,) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String token = await prefs.get("token").toString();
-    StoreController storeController = Get.find();
+    StoreController storeController = Get.find<StoreController>();
     dynamic headers = {
       // 'Content-Type': 'application/json',
       "Authorization": "Bearer $token",
@@ -265,8 +265,8 @@ class ApiService {
 
     dynamic body = {
       "product_id": id,
-       "latitude": storeController.lat,
-      "longitude": storeController.long,
+       "latitude": Get.find<StoreController>().lat,
+      "longitude": Get.find<StoreController>().long,
     };
 
     debugPrint("addToCart $headers");
@@ -414,6 +414,7 @@ class ApiService {
 
       // return true;
     } else {
+      debugPrint("increaseData ${response.body}");
       throw Exception('Failed to load popular products');
     }
   }
